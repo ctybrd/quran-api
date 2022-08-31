@@ -15,17 +15,17 @@ export class AppController {
   }
 
   @Get('i')
-  getIndex(@Query('sql') sql: string): string {
+  getIndex(@Query('sql') sql: string): string[] {
     return this.appService.getFromDB(sql, this.DB_INDEX);
   }
 
   @Get('d')
-  getData(@Query('sql') sql: string): string {
+  getData(@Query('sql') sql: string): string[] {
     return this.appService.getFromDB(sql, this.DB_DATA);
   }
 
   @Get('f')
-  getFarsh(@Query('sql') sql: string): string {
+  getFarsh(@Query('sql') sql: string): string[] {
     return this.appService.getFromDB(sql, this.DB_FARSH);
   }
 }
