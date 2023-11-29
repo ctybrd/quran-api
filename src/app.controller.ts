@@ -3,9 +3,9 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  private DB_INDEX = 'index_v7.db';
-  private DB_DATA = 'data_v15.db';
-  private DB_FARSH = 'farsh_v4.db';
+  private DB_INDEX = 'index_v8.db';
+  private DB_DATA = 'data_v16.db';
+  private DB_FARSH = 'farsh_v6.db';
 
   constructor(private readonly appService: AppService) {}
 
