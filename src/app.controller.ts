@@ -1,12 +1,9 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { AppService } from './app.service';
+import { settings } from './settings';
 
 @Controller()
 export class AppController {
-  private DB_INDEX = 'index_v8.db';
-  private DB_DATA = 'data_v16.db';
-  private DB_FARSH = 'farsh_v6.db';
-
   constructor(private readonly appService: AppService) {}
 
   @Get()
@@ -16,16 +13,16 @@ export class AppController {
 
   @Get('i')
   getIndex(@Query('sql') sql: string): string[] {
-    return this.appService.getFromDB(sql, this.DB_INDEX);
+    return this.appService.getFromDB(sql, settings.DB_INDEX);
   }
 
   @Get('d')
   getData(@Query('sql') sql: string): string[] {
-    return this.appService.getFromDB(sql, this.DB_DATA);
+    return this.appService.getFromDB(sql, settings.DB_DATA);
   }
 
   @Get('f')
   getFarsh(@Query('sql') sql: string): string[] {
-    return this.appService.getFromDB(sql, this.DB_FARSH);
+    return this.appService.getFromDB(sql, settings.DB_FARSH);
   }
 }
