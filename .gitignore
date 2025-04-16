@@ -36,3 +36,5 @@ lerna-debug.log*
 
 .history
 *.db
+*.db-shm
+*.db-wal
