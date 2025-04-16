@@ -27,11 +27,21 @@ async function bootstrap() {
 
   console.log(settings);
 
-  if (!settings.DB_DATA || !settings.DB_FARSH || !settings.DB_INDEX) {
-    console.error('missing database files found');
+  if (!settings.DB_DATA) {
+    console.error('missing DB_DATA file!');
     return;
   }
 
+  if (!settings.DB_INDEX) {
+    console.error('missing DB_INDEX file!');
+    return;
+  }
+
+  if (!settings.DB_FARSH) {
+    console.warn('missing DB_FARSH file!');
+  }
+
   await app.listen(3000);
+  console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
